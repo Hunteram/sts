@@ -5,60 +5,32 @@
 </head>
     
 <body>
+<h1 class="cover-heading"><center>The Soft Toy Selector</center></h1>
+ <form>
+  How many soft toys would you like tonight? <br><input type="number" id="amount" min="1" max="5"><br>
+</form> 
+<br>
+<button onclick="myFunction()">Generate</button>
 
-  <div class="site-wrapper">
+<img src="Bephen.jpg" height="150" width="150">
 
-    <div class="site-wrapper-inner">
-
-      <div class="cover-container">
-        <div class="inner cover">
-          <h1 class="cover-heading">The Soft Toy Selector</h1>
-          <div id="form" class="row" style="margin-top: 5em;">
-
-            <form class="form-horizontal">
-              <div class="form-group">
-                <label for="amount" class="col-sm-3 col-sm-offset-1 control-label">How many soft toys tonight?</label>
-                <div class="col-sm-6">
-                  <input id="amount" type="number" maxlength="4" class="form-control">
-                </div>
-              </div>
-              
-              <!-- Generate button -->
-              <div class="form-group">
-                <div class="col-sm-offset-4 col-sm-4">
-                  <a id="generate" href="#" class="btn btn-lg btn-default btn-block">Generate</a>
-                </div>
-            </form>
-
-          </div>
-
-          <!-- Results -->
-          <div id="result" class="row">
-            <ul>
-            </ul>
-              
-          </div>
-    </div>
-
-  </div>
-  <script>
-    $('#generate').on('click', function() {
-
-      var result = $('#result');
-      result.css('border', '1px solid');
-      result.focus();
-
-      var list = $('#result ul');
-      list.empty();
-
-      var amount = $('#amount').val();
-      var length = $('#length').val();
-
-      var template = {
-          length: length || 8,
-          count: amount || 100
-      };
-    }
-  </script>
+<div id="x"></div>
+	
+ <script>
+	var amount = document.getElementById("amount").value;
+	var max = 12; //denotes the maximum number of soft toys available for selection
+	var winners = [];
+	var stdict = {1: "Bephen", 2: "Bomo", 3: "Conyet", 4: "DaChund", 5: "GouGou", 6: "MoeMoe", 7: "PiGu", 8: "Pikachu", 9: "SnateSnate", 10: "SquirtSquirt", 11: "Stephen", 12: "ZhukZhukZhai"} 
+	function myFunction() {	
+		for (i = 0; i <amount; i++){
+			a = Math.floor(Math.random() * max) + 1;
+			while (winners.includes(a) == true){
+			a = Math.floor(Math.random() * max) + 1};
+			winners.push(a)};
+		var count = winners.length;
+		for (i = 0; i < count; i++){
+			var item = winners[i]
+	}
+ </script>
 </body>
 </html>
