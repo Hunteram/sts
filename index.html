@@ -14,10 +14,9 @@
 <div id="x"></div>
 
  <script>
-	var amount = document.getElementById("amount").value;
 	var max = 12; //denotes the maximum number of soft toys available for selection
 	var winners = [];
-	var stdict = {1: "Bephen", 2: "Bomo", 3: "Conyet", 4: "DaChund", 5: "GouGou", 6: "MoeMoe", 7: "PiGu", 8: "Pikachu", 9: "SnateSnate", 10: "SquirtSquirt", 11: "Stephen", 12: "ZhukZhukZhai"} 
+	var stdict = {1: "Bephen", 2: "Bomo", 3: "Conyet", 4: "DaChund", 5: "GouGou", 6: "MoeMoe", 7: "PiGu", 8: "Pikachu", 9: "SnateSnate", 10: "SquirtSquirt", 11: "Stephen", 12: "ZhukZhukZhai"};
 	function myFunction() {	
 		//for (i = 0; i <amount; i++){
 			//a = Math.floor(Math.random() * max) + 1;
@@ -43,10 +42,12 @@
 			//counter = counter + 1;
 			//}
 		a = Math.floor(Math.random() * 12) + 1;
-		console.log(a)
-		var stdict = {1: "Bephen", 2: "Bomo", 3: "Conyet", 4: "DaChund", 5: "GouGou", 6: "MoeMoe", 7: "PiGu", 8: "Pikachu", 9: "SnateSnate", 10: "SquirtSquirt", 11: "Stephen", 12: "ZhukZhukZhai"} 
+		while (winners.includes(a) == true){
+			a = Math.floor(Math.random() * 12) + 1;
+		}
+		winners.push(a);
+		console.log(winners);
 		var name = stdict[a];
-		console.log(name);
 		var img = new Image(300, 400);
 		var div = document.getElementById("x");
 		img.onload = function() {
