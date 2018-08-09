@@ -6,30 +6,53 @@
     
 <body>
 <h1 class="cover-heading"><center>The Soft Toy Selector</center></h1>
- <form>
-  How many soft toys would you like tonight? <br><input type="number" id="amount" min="1" max="5"><br>
-</form> 
 <br>
-<button onclick="myFunction()">Generate</button>
-
-<img src="https://github.com/Hunteram/sts/blob/master/Bephen.JPG" height="150" width="150">
-
+<br>
+<center><button onclick="myFunction()">Who'll be the lucky winner?</button><center>
+<br>
+<br>
 <div id="x"></div>
-	
+
  <script>
 	var amount = document.getElementById("amount").value;
 	var max = 12; //denotes the maximum number of soft toys available for selection
 	var winners = [];
 	var stdict = {1: "Bephen", 2: "Bomo", 3: "Conyet", 4: "DaChund", 5: "GouGou", 6: "MoeMoe", 7: "PiGu", 8: "Pikachu", 9: "SnateSnate", 10: "SquirtSquirt", 11: "Stephen", 12: "ZhukZhukZhai"} 
 	function myFunction() {	
-		for (i = 0; i <amount; i++){
-			a = Math.floor(Math.random() * max) + 1;
-			while (winners.includes(a) == true){
-			a = Math.floor(Math.random() * max) + 1};
-			winners.push(a)};
-		var count = winners.length;
-		for (i = 0; i < count; i++){
-			var item = winners[i]
+		//for (i = 0; i <amount; i++){
+			//a = Math.floor(Math.random() * max) + 1;
+			//while (winners.includes(a) == true){
+			//a = Math.floor(Math.random() * max) + 1;
+			//}
+			//winners.push(a);
+			//}
+		//var counter = 1
+		//for (i = 0; i < winners.length; i++){
+			//var item = winners[i];
+			//console.log(item);
+			//var name = stdict[item];
+			//console.log(name);
+			//var img = new Image(400, 300);
+			//var div = document.getElementById(counter);
+			//img.onload = function() {
+				//var complete = '<img src="' + img.src + '>"'
+				//div.innerHTML += complete;
+				//div.appendChild(img);
+			//}
+			//img.src = "https://raw.githubusercontent.com/Hunteram/sts/master/" + name + ".JPG"
+			//counter = counter + 1;
+			//}
+		a = Math.floor(Math.random() * 12) + 1;
+		console.log(a)
+		var stdict = {1: "Bephen", 2: "Bomo", 3: "Conyet", 4: "DaChund", 5: "GouGou", 6: "MoeMoe", 7: "PiGu", 8: "Pikachu", 9: "SnateSnate", 10: "SquirtSquirt", 11: "Stephen", 12: "ZhukZhukZhai"} 
+		var name = stdict[a];
+		console.log(name);
+		var img = new Image(300, 400);
+		var div = document.getElementById("x");
+		img.onload = function() {
+			div.appendChild(img)
+		}
+		img.src = "https://raw.githubusercontent.com/Hunteram/sts/master/" + name + ".JPG"
 	}
  </script>
 </body>
