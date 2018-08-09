@@ -5,10 +5,10 @@
 </head>
     
 <body>
-<h1 class="cover-heading"><center>The Soft Toy Selector</center></h1>
+<h1 class="cover-heading" style="color:#130b77;font-size:90px"><center>The Soft Toy Selector</center></h1>
 <br>
 <br>
-<center><button onclick="myFunction()">Who'll be the lucky winner?</button><center>
+<center><button onclick="myFunction()" style="color:#781cef;font-size:45px;">Who'll be the lucky winner(s)?</button><center>
 <br>
 <br>
 <div id="x"></div>
@@ -41,13 +41,17 @@
 			//img.src = "https://raw.githubusercontent.com/Hunteram/sts/master/" + name + ".JPG"
 			//counter = counter + 1;
 			//}
-		a = Math.floor(Math.random() * 12) + 1;
+		if (winners.length == 12){
+			alert("You only have 12 soft toys, I'm afraid...");
+			return;
+		} //once all numbers have been drawn, show a pop up and exit the function
+		a = Math.floor(Math.random() * 12) + 1; //randomise a number between 1 (inclusive) and 12 (inclusive)
 		while (winners.includes(a) == true){
 			a = Math.floor(Math.random() * 12) + 1;
-		}
-		winners.push(a);
+		} //ensures the number drawn does not match one that has previously been drawn
+		winners.push(a); //append newly drawn random number into list
 		var name = stdict[a];
-		var img = new Image(300, 400);
+		var img = new Image(300, 400); //width, then height
 		var div = document.getElementById("x");
 		img.onload = function() {
 			div.appendChild(img)
