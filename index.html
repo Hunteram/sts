@@ -14,9 +14,9 @@
 <div id="x"></div>
 
  <script>
-	var max = 12; //denotes the maximum number of soft toys available for selection
+	var max = 13; //denotes the maximum number of soft toys available for selection
 	var winners = [];
-	var stdict = {1: "Bephen", 2: "Bomo", 3: "Conyet", 4: "DaChund", 5: "GouGou", 6: "MoeMoe", 7: "PiGu", 8: "Pikachu", 9: "SnateSnate", 10: "SquirtSquirt", 11: "Stephen", 12: "ZhukZhukZhai"};
+	var stdict = {1: "Bephen", 2: "Bomo", 3: "Conyet", 4: "DaChund", 5: "GouGou", 6: "MoeMoe", 7: "PiGu", 8: "Pikachu", 9: "SnateSnate", 10: "SquirtSquirt", 11: "Stephen", 12: "ZhukZhukZhai", 13: "SeeFatt"};
 	function myFunction() {	
 		//for (i = 0; i <amount; i++){
 			//a = Math.floor(Math.random() * max) + 1;
@@ -41,13 +41,13 @@
 			//img.src = "https://raw.githubusercontent.com/Hunteram/sts/master/" + name + ".JPG"
 			//counter = counter + 1;
 			//}
-		if (winners.length == 12){
-			alert("You only have 12 soft toys, I'm afraid...");
+		if (winners.length == max){
+			alert("You only have 13 soft toys, I'm afraid...");
 			return;
 		} //once all numbers have been drawn, show a pop up and exit the function
-		a = Math.floor(Math.random() * 12) + 1; //randomise a number between 1 (inclusive) and 12 (inclusive)
+		a = Math.floor(Math.random() * max) + 1; //randomise a number between 1 (inclusive) and 12 (inclusive)
 		while (winners.includes(a) == true){
-			a = Math.floor(Math.random() * 12) + 1;
+			a = Math.floor(Math.random() * max) + 1;
 		} //ensures the number drawn does not match one that has previously been drawn
 		winners.push(a); //append newly drawn random number into list
 		var name = stdict[a];
