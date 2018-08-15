@@ -5,6 +5,8 @@
 </head>
     
 <body>
+<!-- Style is a CSS? element that can be added to any tags rendering texts. Here, 
+colour is in hexadecimal form. <center> puts the text in the centre of the page -->
 <h1 class="cover-heading" style="color:#130b77;font-size:90px"><center>The Soft Toy Selector</center></h1>
 <br>
 <br>
@@ -12,6 +14,19 @@
 <br>
 <br>
 <div id="x"></div>
+<!-- The images need to be prepared according to the following method.
+In order to get them to be in a portrait orientation:
+1. Open image, rotate 90 degrees clockwise and 'make a copy'.
+2. This should result in it 'saving' before making a copy. Choose a new name to save as. Note
+that the image size should have reduced (around 50% of original size) after saving/ making a copy.
+3. Now, rotate 90 degrees counter-clockwise and make a copy again. This time, overwrite the original file.
+4. The file size should remain the same. Upload this 'original'.
+5. For it to be correct, the photo should also appear in the portrait orientation on GitHub 
+without having to choose 'raw'.
+
+NB: This is the lazy workaround. The proper technique is to manipulate the EXIF data field of the image.
+EXIF communicates information about the orientation of the photo when captured, i.e. from phone or camera.
+There is software online that aims to manipulate EXIF. -->
 
  <script>
 	var max = 13; //denotes the maximum number of soft toys available for selection
@@ -42,7 +57,7 @@
 			//counter = counter + 1;
 			//}
 		if (winners.length == max){
-			alert("You only have 13 soft toys, I'm afraid...");
+			alert("You only have " + max + " soft toys, I'm afraid...");
 			return;
 		} //once all numbers have been drawn, show a pop up and exit the function
 		a = Math.floor(Math.random() * max) + 1; //randomise a number between 1 (inclusive) and 12 (inclusive)
